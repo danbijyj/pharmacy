@@ -18,7 +18,7 @@ const DistrictSelector = ({ selectedDistrict, onChange }) => {
         'bg-white border-black hover:border-blue hover:text-blue';
 
     return (
-        <div className="relative w-175">
+        <div className="relative w-175 shadow-xl">
             <div className="absolute -top-60 left-1/2 -translate-x-1/2 opacity-30">
                 <img src="/images/logo.png" />
             </div>
