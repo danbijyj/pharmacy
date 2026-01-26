@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-blue: #2957e2;
+    --color-blue-sub: #6b82c7;
+    --color-sky: #e0e6f6;
+    --color-green: #41f241;
+    --shadow-card: 0 6px 20px 5px rgba(0, 0, 0, 0.08);
+    --shadow-status: 0 1px 30px 0 rgba(0, 0, 0, 0.16);
+    --layout-inner: 1200px;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2')
+        format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2')
+        format('woff2');
+    font-weight: 500; /*font-medium*/
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2')
+        format('woff2');
+    font-weight: 600; /*font-semibold*/
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2')
+        format('woff2');
+    font-weight: 700; /*font-bold*/
+    font-display: swap;
+}
+
+body {
+    font-family: 'Paperozi', 'Pretendard', system-ui, sans-serif;
+}
+.inner {
+    max-width: var(--layout-inner);
+    width: var(--layout-inner);
+    margin: 0 auto;
+}
