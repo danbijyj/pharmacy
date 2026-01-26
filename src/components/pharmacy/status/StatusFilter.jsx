@@ -3,7 +3,7 @@ import { useState } from 'react';
 const StatusFilter = ({ onChange }) => {
     const [active, setActive] = useState('all');
     const base =
-        'w-22 md:w-42 lg:w-72 rounded-full cursor-pointer text-center md:text-xl lg:text-2xl py-1 md:py-2';
+        'w-22 md:w-40 lg:w-72 rounded-full cursor-pointer text-center text-sm md:text-lg lg:text-2xl py-1 md:py-2';
     const activeCls = 'bg-white border border-blue font-semibold text-blue';
     const inactiveCls = 'text-gray-600 hover:text-blue';
     const handleClick = (value) => {
