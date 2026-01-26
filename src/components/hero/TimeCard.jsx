@@ -6,9 +6,9 @@ const TimeCard = ({ now }) => {
     const min = String(now.getMinutes()).padStart(2, '0');
 
     return (
-        <div className="w-110">
+        <div className="w-full lg:w-110 z-10">
             <div
-                className="rounded-lg flex flex-col justify-center items-center gap-10 py-20 shadow-xl"
+                className="rounded-lg flex flex-col justify-center items-center gap-2 md:gap-4 lg:gap-10 py-6 lg:py-20 shadow-xl"
                 style={{
                     backgroundImage: `
                       radial-gradient(
@@ -25,12 +25,12 @@ const TimeCard = ({ now }) => {
                     `,
                 }}
             >
-                <p className="text-4xl text-gray-800">
+                <p className="text-lg md:text-2xl lg:text-4xl text-gray-800">
                     {yyyy}. {mm}. {dd}
                 </p>
 
-                <p className="text-5xl font-semibold text-gray-900">
-                    <span className="text-green text-2xl font-bold mr-2">
+                <p className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900">
+                    <span className="text-green text-lg lg:text-2xl font-bold mr-2">
                         NOW
                     </span>
                     {hh} : {min}

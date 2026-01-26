@@ -6,7 +6,7 @@ const PharmacyList = ({ pharmacies }) => {
     }
 
     return (
-        <div className="inner">
+        <div className="inner px-4 lg:px-0">
             <ul>
                 {pharmacies.map((pharmacy) => (
                     <PharmacyCard key={pharmacy.hpid} data={pharmacy} />

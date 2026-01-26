@@ -62,15 +62,25 @@ const PharmacyCard = ({ data }) => {
         : null;
 
     const btnCls =
-        'bg-white hover:bg-blue transition rounded-full text-2xl text-blue hover:text-green border hover:border-blue cursor-pointer p-2 inline-flex';
+        'bg-white hover:bg-blue transition rounded-full text-xl lg:text-2xl text-blue hover:text-green border hover:border-blue cursor-pointer p-2 inline-flex';
     const disabledCls =
-        'bg-white rounded-full text-2xl text-gray-300 border cursor-not-allowed p-2 inline-flex';
+        'bg-white rounded-full text-xl lg:text-2xl text-gray-300 border cursor-not-allowed p-2 inline-flex';
 
     return (
-        <li className="flex items-center justify-between gap-10 px-12 py-6 shadow-card bg-white rounded-lg border border-gray-200 mb-6">
-            <div>
+        <li
+            className="flex flex-col md:flex-row 
+        items-start md:items-center 
+        justify-between 
+        gap-4 
+        px-4 md:px-8 lg:px-12 
+        py-4 lg:py-6 
+        shadow-card bg-white rounded-lg 
+        border border-gray-200 
+        mb-6"
+        >
+            <div className="flex-1 min-w-0">
                 <h3
-                    className={`text-2xl font-medium flex items-center gap-2 mb-2 ${
+                    className={`text-lg lg:text-2xl font-medium flex items-center gap-2 mb-1 lg:mb-2 ${
                         isClosed ? 'text-gray-400' : ''
                     }`}
                 >
@@ -87,15 +97,15 @@ const PharmacyCard = ({ data }) => {
                     {dutyName}
                 </h3>
 
-                <p className="font-[Pretendard] flex items-center gap-2">
-                    <span className="inline-block text-gray-400">
+                <p className="font-[Pretendard] break-keep flex items-start lg:items-center gap-2">
+                    <span className="inline-block text-gray-400 mt-1 lg:mt-0">
                         <IoHomeOutline />
                     </span>
-                    {dutyAddr}
+                    <span className="leading-relaxed">{dutyAddr}</span>
                 </p>
 
-                <p className="font-[Pretendard] flex items-center gap-2">
-                    <span className="inline-block text-gray-400">
+                <p className="font-[Pretendard] break-keep flex items-start lg:items-center gap-2">
+                    <span className="inline-block text-gray-400 mt-1 lg:mt-0">
                         <IoAlarmOutline />
                     </span>
                     {isClosingSoon && closeTimeText && (
@@ -112,10 +122,10 @@ const PharmacyCard = ({ data }) => {
                     {isClosed && <>지금은 영업 종료</>}
                 </p>
 
-                <p className="font-[Pretendard] break-keep flex items-center gap-2">
+                <p className="font-[Pretendard] break-keep flex items-start lg:items-center gap-2">
                     {dutyInf && (
                         <>
-                            <span className="inline-block text-gray-400">
+                            <span className="inline-block text-gray-400 mt-1 lg:mt-0">
                                 <IoMicOutline />
                             </span>
                             <span className=" text-gray-600">{dutyInf}</span>
@@ -124,8 +134,8 @@ const PharmacyCard = ({ data }) => {
                 </p>
             </div>
 
-            <div>
-                <ul className="flex justify-end gap-4">
+            <div className="w-full md:w-auto shrink-0">
+                <ul className="flex justify-center md:justify-end gap-6 md:gap-2 lg:gap-4 flex-nowrap">
                     {dutyTel1 && (
                         <li>
                             <a
@@ -160,7 +170,7 @@ const PharmacyCard = ({ data }) => {
                             <img
                                 src="/images/map-kakao.png"
                                 alt="카카오 지도"
-                                className="w-6 h-6 transition group-hover:scale-110"
+                                className="w-5 lg:w-6 h-5 lg:h-6 transition group-hover:scale-110"
                             />
                         </a>
                     </li>
@@ -179,7 +189,7 @@ const PharmacyCard = ({ data }) => {
                             <img
                                 src="/images/map-naver.png"
                                 alt="네이버 지도"
-                                className="w-6 h-6 transition group-hover:scale-110"
+                                className="w-5 lg:w-6 h-5 lg:h-6 transition group-hover:scale-110"
                             />
                         </a>
                     </li>

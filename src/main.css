@@ -47,6 +47,6 @@ body {
 }
 .inner {
     max-width: var(--layout-inner);
-    width: var(--layout-inner);
+    width: 100%;
     margin: 0 auto;
 }

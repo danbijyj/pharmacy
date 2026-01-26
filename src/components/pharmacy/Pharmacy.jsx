@@ -66,7 +66,7 @@ const Pharmacy = ({
     const hasMore = displayedList.length < baseList.length;
 
     return (
-        <section className=" mb-35">
+        <section className="mb-15 lg:mb-35">
             <StatusSummary
                 selectedDistrict={selectedDistrict}
                 openCount={openPharmacies.length}

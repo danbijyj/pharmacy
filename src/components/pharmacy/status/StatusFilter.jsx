@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 const StatusFilter = ({ onChange }) => {
     const [active, setActive] = useState('all');
-    const base = 'w-72 rounded-full cursor-pointer text-center text-2xl py-2';
+    const base =
+        'w-22 md:w-42 lg:w-72 rounded-full cursor-pointer text-center md:text-xl lg:text-2xl py-1 md:py-2';
     const activeCls = 'bg-white border border-blue font-semibold text-blue';
     const inactiveCls = 'text-gray-600 hover:text-blue';
     const handleClick = (value) => {
@@ -11,9 +12,9 @@ const StatusFilter = ({ onChange }) => {
     };
 
     return (
-        <div className="inner">
+        <div className="inner px-4 lg:px-0">
             <ul
-                className="flex justify-between bg-sky mb-6 p-1 rounded-full gap-2"
+                className="flex justify-between bg-sky mb-6 p-1 rounded-full gap-1 md:gap-2"
                 role="tablist"
             >
                 <li>
