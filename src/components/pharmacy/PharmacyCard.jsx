@@ -68,24 +68,26 @@ const PharmacyCard = ({ data }) => {
 
     return (
         <li
-            className="flex flex-col md:flex-row 
+            className="group flex flex-col md:flex-row 
         items-start md:items-center 
         justify-between 
-        gap-4 
+        gap-4 mb-6
         px-4 md:px-8 lg:px-12 
         py-4 lg:py-6 
         shadow-card bg-white rounded-lg 
-        border border-gray-200 
-        mb-6"
+        border border-gray-200       
+        transition-all duration-300
+        hover:-translate-y-2
+      hover:border-blue/30"
         >
             <div className="flex-1 min-w-0">
                 <h3
-                    className={`text-lg lg:text-2xl font-medium flex items-center gap-2 mb-1 lg:mb-2 ${
+                    className={`text-lg lg:text-2xl font-medium flex items-center gap-2 mb-1 lg:mb-2 transition-colors duration-200 group-hover:text-blue ${
                         isClosed ? 'text-gray-400' : ''
                     }`}
                 >
                     <span
-                        className={`inline-block w-4 h-4 rounded-full ${statusDotCls}`}
+                        className={`relative inline-flex w-4 h-4 rounded-full ${statusDotCls}`}
                         title={
                             isClosingSoon
                                 ? '곧 영업 종료'
@@ -93,7 +95,11 @@ const PharmacyCard = ({ data }) => {
                                   ? '영업중'
                                   : '영업 종료'
                         }
-                    />
+                    >
+                        {isOpen && (
+                            <span className="absolute inset-0 rounded-full bg-blue animate-ping opacity-70"></span>
+                        )}
+                    </span>
                     {dutyName}
                 </h3>
 
@@ -110,7 +116,7 @@ const PharmacyCard = ({ data }) => {
                     </span>
                     {isClosingSoon && closeTimeText && (
                         <>
-                            <span className="text-gray-600 font-medium">
+                            <span className="text-gray-600 font-medium animate-pulse">
                                 곧 종료
                             </span>
                             오늘 {closeTimeText}까지 영업
@@ -140,7 +146,9 @@ const PharmacyCard = ({ data }) => {
                         <li>
                             <a
                                 href={!isClosed ? `tel:${dutyTel1}` : '#'}
-                                className={!isClosed ? btnCls : disabledCls}
+                                className={`${
+                                    !isClosed ? btnCls : disabledCls
+                                } transition-all duration-200 hover:scale-110 active:scale-95`}
                                 aria-label="전화 걸기"
                                 title={
                                     isClosed
@@ -170,7 +178,7 @@ const PharmacyCard = ({ data }) => {
                             <img
                                 src="/images/map-kakao.png"
                                 alt="카카오 지도"
-                                className="w-5 lg:w-6 h-5 lg:h-6 transition group-hover:scale-110"
+                                className="w-5 lg:w-6 h-5 lg:h-6 transition-transform duration-200 group-hover:scale-110"
                             />
                         </a>
                     </li>
@@ -189,7 +197,7 @@ const PharmacyCard = ({ data }) => {
                             <img
                                 src="/images/map-naver.png"
                                 alt="네이버 지도"
-                                className="w-5 lg:w-6 h-5 lg:h-6 transition group-hover:scale-110"
+                                className="w-5 lg:w-6 h-5 lg:h-6 transition-transform duration-200 group-hover:scale-110"
                             />
                         </a>
                     </li>
